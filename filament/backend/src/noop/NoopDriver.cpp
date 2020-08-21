@@ -151,6 +151,10 @@ bool NoopDriver::isFrameTimeSupported() {
     return true;
 }
 
+bool NoopDriver::isVulkanClipSpace() {
+    return false;
+}
+
 void NoopDriver::updateVertexBuffer(Handle<HwVertexBuffer> vbh, size_t index,
         BufferDescriptor&& p, uint32_t byteOffset) {
     scheduleDestroy(std::move(p));

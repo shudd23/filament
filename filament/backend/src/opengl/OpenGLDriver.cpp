@@ -1512,6 +1512,11 @@ bool OpenGLDriver::isFrameTimeSupported() {
     return mFrameTimeSupported;
 }
 
+bool OpenGLDriver::isVulkanClipSpace() {
+    // whether z-coordinate of clip-space is in [0,w]
+    return mContext.ext.EXT_clip_control;
+}
+
 // ------------------------------------------------------------------------------------------------
 // Swap chains
 // ------------------------------------------------------------------------------------------------

@@ -796,6 +796,11 @@ bool VulkanDriver::isFrameTimeSupported() {
     return true;
 }
 
+bool VulkanDriver::isVulkanClipSpace() {
+    // z-coordinate of clip-space is in [0,w]
+    return true;
+}
+
 void VulkanDriver::updateVertexBuffer(Handle<HwVertexBuffer> vbh, size_t index,
         BufferDescriptor&& p, uint32_t byteOffset) {
     auto& vb = *handle_cast<VulkanVertexBuffer>(mHandleMap, vbh);
